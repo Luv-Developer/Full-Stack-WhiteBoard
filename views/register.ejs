@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel = "stylesheet" type = "text/css" href = "/stylesheets/register.css">
+</head>
+<body>
+
+<div class="login-container">
+    <h2>Register</h2>
+    <form action = "/register" method = "post">
+        <div class="input-group">
+            <input type="text" id="username" required name = "username" minlength="4" maxlength="15">
+            <label for="username">Username</label>
+        </div>
+        <div class="input-group">
+            <input type="email" id="email" required name = "email" minlength="8" maxlength="27">
+            <label for="email">Email</label>
+        </div>
+        <div class="input-group">
+            <input type="password" id="password" required name = "password" minlength="4" maxlength="10">
+            <label for="password">Password</label>
+        </div>
+        <button type="submit">Register</button>
+    </form>
+</div>
+</body>
+</html>

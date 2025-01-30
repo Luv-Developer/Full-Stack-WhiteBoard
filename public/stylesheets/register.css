@@ -1,0 +1,102 @@
+body {
+    font-family: sans-serif;
+    background-color: #151515; /* Light gray background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensure full viewport height */
+    margin: 0;
+    overflow: hidden; /* Hide scrollbars during animation */
+}
+
+.login-container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 350px; /* Adjust width as needed */
+    animation: fadeIn 1s ease-in-out; /* Fade-in animation */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333; /* Darker heading color */
+}
+
+.input-group {
+    margin-bottom: 20px;
+    position: relative; /* For label animation */
+}
+
+.input-group label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    pointer-events: none; /* Allow clicking through label */
+    color: #777;
+    transition: 0.3s ease all; /* Smooth transition for label */
+}
+
+.input-group input {
+    width: calc(100% - 20px); /* Account for padding */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    font-size: 16px;
+    transition: border-color 0.3s ease; /* Smooth border color change */
+}
+
+.input-group input:focus {
+    border-color: #4CAF50; /* Green border on focus */
+}
+
+.input-group input:focus + label, /* Label animation on input focus */
+.input-group input:not(:placeholder-shown) + label { /* Label animation if input has content */
+    top: 0;
+    left: 10px;
+    font-size: 12px;
+    color: #4CAF50; /* Green label color */
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50; /* Green button */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease; /* Smooth background color change */
+}
+
+button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Media Queries */
+@media (max-width: 400px) {
+    .login-container {
+        width: 90%; /* Full width on small screens */
+        padding: 20px;
+    }
+}
+
+@media (min-width: 768px) {
+    .login-container {
+        width: 400px; /* Wider on larger screens */
+    }
+}
